@@ -1,6 +1,6 @@
 #### Install Windows 11
 
-Download iso  
+Download iso:  
 
 Make CapsLock a secondary Escape:
 ```ps1
