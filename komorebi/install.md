@@ -2,9 +2,14 @@
 
 [Install](https://lgug2z.github.io/komorebi/)
 
-Long Path Support:  
+Long Paths Support:  
 ```ps1
-Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem'
-Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' -Name 'LongPathsEnabled' -Value 1
-Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem'
+Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' `
+    | Select-Object LongPathsEnabled
+
+Set-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' `
+    -Name 'LongPathsEnabled' -Value 1
+
+Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' `
+    | Select-Object LongPathsEnabled
 ```
