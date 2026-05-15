@@ -14,18 +14,31 @@ Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' `
     | Select-Object LongPathsEnabled
 ```
 
-** Add this to your ...profile.ps1:  
 ```ps1
-$env:KOMOREBI_CONFIG_HOME="$HOME\.config\komorebi"
-Write-HOST "`$env:KOMOREBI_CONFIG_HOME = $env:KOMOREBI_CONFIG_HOME"
+# Run this command to make sure that the directory has been created
+mkdir -p ~/.config/komorebi
 
+# Run this command to open up your PowerShell profile configuration in Notepad
+notepad $PROFILE
+
+# Add this line (with your login user!) to the bottom of your PowerShell profile configuration
+$Env:KOMOREBI_CONFIG_HOME = 'C:\Users\LGUG2Z\.config\komorebi'
+
+# Save the changes and then reload the PowerShell profile
+. $PROFILE
 ```
 
 ** Install komorebi:  
 ```ps1
 scoop bucket add extras
 scoop install komorebi
+komorebic --version
 scoop install masir
+```
+
+```ps1
+komorebic start --bar --masir
+komorebic stop --bar --masir
 ```
 
 ```ps1
