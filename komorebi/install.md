@@ -42,7 +42,10 @@ komorebic --version
 ```
 
 ```ps1
+#Download demo <settings>.json
 komorebic quickstart
+#Focus follow mouse:
+winget install LGUG2Z.masir
 
-komorebic start --bar
+komorebic start --bar --masir
 ```

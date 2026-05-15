@@ -1,7 +1,7 @@
-#### Create Repo win_komorebi.git using pwsh 7
+#### Create Repo
 
 ```ps1
-cd A:\win\01install\komorebi
+cd A:\win\01install
 git config --global --add safe.directory A:\win\01install\komorebi
 git init
 git status
