@@ -14,9 +14,18 @@ Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' `
     | Select-Object LongPathsEnabled
 ```
 
+** Add this to your ...profile.ps1:  
+```ps1
+$env:KOMOREBI_CONFIG_HOME="$HOME\.config\komorebi"
+Write-HOST "`$env:KOMOREBI_CONFIG_HOME = $env:KOMOREBI_CONFIG_HOME"
+
+```
+
+** Install komorebi:  
 ```ps1
 scoop bucket add extras
 scoop install komorebi
+scoop install masir
 ```
 
 ```ps1
